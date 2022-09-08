@@ -23,4 +23,9 @@ async function startApolloServer(typeDefs, resolvers) {
     `);
 }
 
+const client = new ApolloClient({
+  uri: 'https://server-catstronauts.herokuapp.com/', // change this to YOUR server URI
+  cache: new InMemoryCache()
+});
+
 startApolloServer(typeDefs, resolvers);
