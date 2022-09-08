@@ -15,17 +15,11 @@ async function startApolloServer(typeDefs, resolvers) {
   });
 
   const { url, port } = await server.listen({port: process.env.PORT || 4000});
-  
   console.log(`
       🚀  Server is running
       🔉  Listening on port ${port}
       📭  Query at ${url}
     `);
 }
-
-const client = new ApolloClient({
-  uri: 'https://server-catstronauts.herokuapp.com/', // change this to YOUR server URI
-  cache: new InMemoryCache()
-});
 
 startApolloServer(typeDefs, resolvers);
